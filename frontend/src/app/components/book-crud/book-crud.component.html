@@ -1,0 +1,89 @@
+<!-- <h1>Library CRUD Operations</h1>
+
+<form [formGroup]="bookForm" (ngSubmit)="saveBook()">
+  <label for="bookname">Book Name:</label>
+  <input id="bookname" formControlName="bookname" />
+
+  <label for="author">Author:</label>
+  <input id="author" formControlName="author" />
+
+  <label for="price">Price:</label>
+  <input id="price" formControlName="price" />
+
+  <button type="submit">Save Book</button>
+  <button type="button" (click)="resetForm()">Clear</button>
+</form>
+
+<h2>Book List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.bookname }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.price }}</td>
+      <td>
+        <button (click)="editBook(book)">Edit</button>
+        <button (click)="deleteBook(book.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+
+
+<div class="container mt-5">
+  <h1 class="mb-4">Library CRUD Operations</h1>
+
+  <form [formGroup]="bookForm" (ngSubmit)="saveBook()" class="mb-4">
+    <div class="mb-3">
+      <label for="bookname" class="form-label">Book Name:</label>
+      <input id="bookname" formControlName="bookname" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="author" class="form-label">Author:</label>
+      <input id="author" formControlName="author" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price:</label>
+      <input id="price" formControlName="price" type="number" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Book</button>
+    <button type="button" (click)="resetForm()" class="btn btn-secondary">Clear</button>
+  </form>
+
+
+
+  <h2 class="mt-4">Book List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.bookname }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.price }}</td>
+        <td>
+          <button (click)="editBook(book)" class="btn btn-warning btn-sm">Edit</button>
+          <button (click)="deleteBook(book.id)" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
